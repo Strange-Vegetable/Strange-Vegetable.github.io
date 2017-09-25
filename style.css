@@ -1,0 +1,7 @@
+h1 {
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    border: 5px #FEDCBA;
+    border-style: inset outset;
+    border-radius: 5px;
+}
