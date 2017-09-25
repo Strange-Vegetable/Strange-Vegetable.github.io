@@ -1,7 +1,17 @@
 h1 {
-    color: rgba(255,255,255,0.85);
+    padding: 10px 0;
+    color: rgba(255,100,225,1.0);
     text-align: center;
     border: 5px #FEDCBA;
-    border-style: inset outset;
+    border-style: inset;
     border-radius: 5px;
+    font-family: "Comic Sans MS",cursive,sans-serif;
+}
+body {
+    padding: 5px 0;
+    border: 5px #FEFEFE;
+    border-style: outset;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(25,175,75,1.0);
 }

@@ -1,12 +1,255 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>
+            Calculator For Everything
+        </title>
         <link rel="stylesheet" href="style.css"/>
         <script>
-            
+            var output="";
+            function calculate(){
+                var first=document.getElementById('firstNumber').value;
+                var numTypeOne=document.getElementById('selectBoxOne').value;
+                var operation=document.getElementById('selectBoxTwo').value;
+                var numTypeTwo=document.getElementById('selectBoxThree').value;
+                var second=document.getElementById('secondNumber').value;
+                var result;
+                if(numTypeOne=="Decimal"){
+                    if(operation=="+"){
+                        if(numTypeTwo=="Decimal"){
+                            result = add(first,second);
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="-"){
+                        if(numTypeTwo=="Decimal"){
+                            result=subtract(first,second);
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="*"){
+                        if(numTypeTwo=="Decimal"){
+                            result=multiply(first,second);
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="/"){
+                        if(numTypeTwo=="Decimal"){
+                            result=divide(first,second);
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }
+                }else if(numTypeOne=="Binary"){
+                    if(operation=="+"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="-"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="*"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="/"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }
+                }else if(numTypeOne=="Hex"){
+                    if(operation=="+"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="-"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="*"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="/"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }
+                }else if(numTypeOne=="Octal"){
+                    if(operation=="+"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="-"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="*"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }else if(operation=="/"){
+                        if(numTypeTwo=="Decimal"){
+                            
+                        }else if(numTypeTwo=="Binary"){
+                            
+                        }else if(numTypeTwo=="Hex"){
+                            
+                        }else if(numTypeTwo=="Octal"){
+                            
+                        }
+                    }
+                }
+                display(first,operation,second,result);
+            }
+            function add(x,y){
+                x=parseFloat (x);
+                y=parseFloat (y);
+                return x+y;
+            }
+            function subtract(x,y){
+                x=parseFloat (x);
+                y=parseFloat (y);
+                return x-y;
+            }
+            function multiply(x,y){
+                x=parseFloat (x);
+                y=parseFloat (y);
+                return x*y;
+            }
+            function divide(x,y){
+                x=parseFloat (x);
+                y=parseFloat (y);
+                return x/y;
+            }
+            function display(item1,item2,item3,item4){
+                output=item1;
+                output+=item2;
+                output+=item3;
+                output+="=";
+                output+=item4;
+                document.getElementById('calculation').innerHTML=output;
+            }
         </script>
     </head>
     <body>
-        
+        <h1>
+            Testing the text that I've made.
+        </h1>
+        <br>
+        <br>
+        <input type="text" id="firstNumber" placeholder="Number 1">
+        <select id="selectBoxOne">
+            <option>Decimal</option>
+            <option>Binary</option>
+            <option>Hex</option>
+            <option>Octal</option>
+        </select>
+        <br>
+        <select id="selectBoxTwo">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <br>
+        <input type="text" id="secondNumber" placeholder="Number 2">
+        <select id="selectBoxThree">
+            <option>Decimal</option>
+            <option>Binary</option>
+            <option>Hex</option>
+            <option>Octal</option>
+        </select>
+        <br>
+        <input type="button" value="Math!" onClick="calculate()">
+        <input type="button" value="Clear" onClick="clear()">
+        <br>
+        <br>
+        <div id="calculation"></div>
+        <br>
+        <br>
     </body>
 </html>
