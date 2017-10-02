@@ -5,6 +5,20 @@
             Calculator For Everything
         </title>
         <link rel="stylesheet" href="style.css"/>
+        
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDouMabCwvejvJ3NNeggWVNAhEIOz7Lb-s",
+    authDomain: "super-calculator-f513d.firebaseapp.com",
+    databaseURL: "https://super-calculator-f513d.firebaseio.com",
+    projectId: "super-calculator-f513d",
+    storageBucket: "",
+    messagingSenderId: "814806881007"
+  };
+  firebase.initializeApp(config);
+</script>
         <script>
             var output="";
             function calculate(){
@@ -13,91 +27,522 @@
                 var operation=document.getElementById('selectBoxTwo').value;
                 var numTypeTwo=document.getElementById('selectBoxThree').value;
                 var second=document.getElementById('secondNumber').value;
-                var result;
+                var result, binaryString, binaryArray, hexString, hexArray, octalString, octalArray, decimalB1, decimalH1, decimalO1, numberOfDigits, decimalB2, decimalH2, decimalO2;
+                                                                    //Here is the numTypeOne decimal part.
                 if(numTypeOne=="Decimal"){
+                    
                     if(operation=="+"){
+                        
                         if(numTypeTwo=="Decimal"){
                             result = add(first,second);
+                        
+                            
                         }else if(numTypeTwo=="Binary"){
+                            decimalB2=0;
+                            binaryString=second;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB2 += digit*(2**i);
+			                }
+			                second=decimalB2;
+			                result=add(first,second);
+                        
                             
                         }else if(numTypeTwo=="Hex"){
+                            decimalH2=0;
+                            hexString=second;
+                            hexArray=hexString.split("");
+                            hexArray.reverse();
+                            numberOfDigits=hexArray.length;
+                            for (var i=0;i<numberOfDigits;i++){
+				                if (hexArray[i]=="a"){
+					                hexArray[i]="10";
+				                }else if(hexArray[i]=="b"){
+					                hexArray[i]="11";
+				                }else if(hexArray[i]=="c"){
+					                hexArray[i]="12";
+			                	}else if(hexArray[i]=="d"){
+					                hexArray[i]="13";
+		                		}else if(hexArray[i]=="e"){
+			                		hexArray[i]="14";
+			                	}else if(hexArray[i]=="f"){
+			                		hexArray[i]="15";
+			            	    }
+                            }
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(hexArray[i]);
+				                decimalH2 += digit*(16**i);
+			                }
+			                second=decimalH2;
+			                result=add(first,second);
+                        
                             
                         }else if(numTypeTwo=="Octal"){
-                            
+                            decimalO2=0;
+                            octalString=second;
+                            octalArray=octalString.split("");
+                            octalArray.reverse();
+                            numberOfDigits=octalArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(octalArray[i]);
+				                decimalO2 += digit*(8**i);
+			                }
+			                second=decimalO2;
+			                result=add(first,second);
                         }
+                    
+                        
                     }else if(operation=="-"){
+                        
                         if(numTypeTwo=="Decimal"){
                             result=subtract(first,second);
+                       
                         }else if(numTypeTwo=="Binary"){
+                            decimalB2=0;
+                            binaryString=second;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB2 += digit*(2**i);
+			                }
+			                second=decimalB2;
+			                result=subtract(first,second);
+                        
                             
                         }else if(numTypeTwo=="Hex"){
+                            decimalH2=0;
+                            hexString=second;
+                            hexArray=hexString.split("");
+                            hexArray.reverse();
+                            numberOfDigits=hexArray.length;
+                            for (var i=0;i<numberOfDigits;i++){
+				                if (hexArray[i]=="a"){
+					                hexArray[i]="10";
+				                }else if(hexArray[i]=="b"){
+					                hexArray[i]="11";
+				                }else if(hexArray[i]=="c"){
+					                hexArray[i]="12";
+			                	}else if(hexArray[i]=="d"){
+					                hexArray[i]="13";
+		                		}else if(hexArray[i]=="e"){
+			                		hexArray[i]="14";
+			                	}else if(hexArray[i]=="f"){
+			                		hexArray[i]="15";
+			            	    }
+                            }
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(hexArray[i]);
+				                decimalH2 += digit*(16**i);
+			                }
+			                second=decimalH2;
+			                result=subtract(first,second);
+                        
                             
                         }else if(numTypeTwo=="Octal"){
-                            
+                            decimalO2=0;
+                            octalString=second;
+                            octalArray=octalString.split("");
+                            octalArray.reverse();
+                            numberOfDigits=octalArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(octalArray[i]);
+				                decimalO2 += digit*(8**i);
+			                }
+			                second=decimalO2;
+			                result=subtract(first,second);
                         }
+                    
+                        
                     }else if(operation=="*"){
+                       
+                        
                         if(numTypeTwo=="Decimal"){
                             result=multiply(first,second);
+                        
+                            
                         }else if(numTypeTwo=="Binary"){
+                            decimalB2=0;
+                            binaryString=second;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB2 += digit*(2**i);
+			                }
+			                second=decimalB2;
+			                result=multiply(first,second);
+                        
                             
                         }else if(numTypeTwo=="Hex"){
+                            decimalH2=0;
+                            hexString=second;
+                            hexArray=hexString.split("");
+                            hexArray.reverse();
+                            numberOfDigits=hexArray.length;
+                            for (var i=0;i<numberOfDigits;i++){
+				                if (hexArray[i]=="a"){
+					                hexArray[i]="10";
+				                }else if(hexArray[i]=="b"){
+					                hexArray[i]="11";
+				                }else if(hexArray[i]=="c"){
+					                hexArray[i]="12";
+			                	}else if(hexArray[i]=="d"){
+					                hexArray[i]="13";
+		                		}else if(hexArray[i]=="e"){
+			                		hexArray[i]="14";
+			                	}else if(hexArray[i]=="f"){
+			                		hexArray[i]="15";
+			            	    }
+                            }
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(hexArray[i]);
+				                decimalH2 += digit*(16**i);
+			                }
+			                second=decimalH2;
+			                result=multiply(first,second);
+                        
                             
                         }else if(numTypeTwo=="Octal"){
-                            
+                            decimalO2=0;
+                            octalString=second;
+                            octalArray=octalString.split("");
+                            octalArray.reverse();
+                            numberOfDigits=octalArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(octalArray[i]);
+				                decimalO2 += digit*(8**i);
+			                }
+			                second=decimalO2;
+			                result=multiply(first,second);
                         }
+                    
+                        
                     }else if(operation=="/"){
+                        
                         if(numTypeTwo=="Decimal"){
                             result=divide(first,second);
+                        
+                            
                         }else if(numTypeTwo=="Binary"){
+                            decimalB2=0;
+                            binaryString=second;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB2 += digit*(2**i);
+			                }
+			                second=decimalB2;
+			                result=divide(first,second);
+                        
                             
                         }else if(numTypeTwo=="Hex"){
+                            decimalH2=0;
+                            hexString=second;
+                            hexArray=hexString.split("");
+                            hexArray.reverse();
+                            numberOfDigits=hexArray.length;
+                            for (var i=0;i<numberOfDigits;i++){
+				                if (hexArray[i]=="a"){
+					                hexArray[i]="10";
+				                }else if(hexArray[i]=="b"){
+					                hexArray[i]="11";
+				                }else if(hexArray[i]=="c"){
+					                hexArray[i]="12";
+			                	}else if(hexArray[i]=="d"){
+					                hexArray[i]="13";
+		                		}else if(hexArray[i]=="e"){
+			                		hexArray[i]="14";
+			                	}else if(hexArray[i]=="f"){
+			                		hexArray[i]="15";
+			            	    }
+                            }
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(hexArray[i]);
+				                decimalH2 += digit*(16**i);
+			                }
+			                second=decimalH2;
+			                result=divide(first,second);
+                        
                             
                         }else if(numTypeTwo=="Octal"){
-                            
+                            decimalO2=0;
+                            octalString=second;
+                            octalArray=octalString.split("");
+                            octalArray.reverse();
+                            numberOfDigits=octalArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(octalArray[i]);
+				                decimalO2 += digit*(8**i);
+			                }
+			                second=decimalO2;
+			                result=divide(first,second);
                         }
                     }
+                                                                    //Here is the numTypeOne binary part
                 }else if(numTypeOne=="Binary"){
+                    
                     if(operation=="+"){
+                        
                         if(numTypeTwo=="Decimal"){
-                            
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+                            result=add(first,second);
+                       
+                       
                         }else if(numTypeTwo=="Binary"){
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+			                
+			                decimalB2=0;
+                            binaryString=second;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB2 += digit*(2**i);
+			                }
+			                second=decimalB2;
+			                result=add(first,second);
+                        
                             
                         }else if(numTypeTwo=="Hex"){
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+			                
+			                decimalH2=0;
+                            hexString=second;
+                            hexArray=hexString.split("");
+                            hexArray.reverse();
+                            numberOfDigits=hexArray.length;
+                            for (var i=0;i<numberOfDigits;i++){
+				                if (hexArray[i]=="a"){
+					                hexArray[i]="10";
+				                }else if(hexArray[i]=="b"){
+					                hexArray[i]="11";
+				                }else if(hexArray[i]=="c"){
+					                hexArray[i]="12";
+			                	}else if(hexArray[i]=="d"){
+					                hexArray[i]="13";
+		                		}else if(hexArray[i]=="e"){
+			                		hexArray[i]="14";
+			                	}else if(hexArray[i]=="f"){
+			                		hexArray[i]="15";
+			            	    }
+                            }
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(hexArray[i]);
+				                decimalH2 += digit*(16**i);
+			                }
+			                second=decimalH2;
+			                result=add(first,second);
+                        
                             
                         }else if(numTypeTwo=="Octal"){
-                            
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+			                
+			                decimalO2=0;
+                            octalString=second;
+                            octalArray=octalString.split("");
+                            octalArray.reverse();
+                            numberOfDigits=octalArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(octalArray[i]);
+				                decimalO2 += digit*(8**i);
+			                }
+			                second=decimalO2;
+			                result=add(first,second);
                         }
+                    
+                        
                     }else if(operation=="-"){
+                        
                         if(numTypeTwo=="Decimal"){
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+                            result=subtract(first,second);
+                        
                             
                         }else if(numTypeTwo=="Binary"){
+                             decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+			                
+			                decimalB2=0;
+                            binaryString=second;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB2 += digit*(2**i);
+			                }
+			                second=decimalB2;
+			                result=subtract(first,second);
+                        
                             
                         }else if(numTypeTwo=="Hex"){
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+			                
+			                decimalH2=0;
+                            hexString=second;
+                            hexArray=hexString.split("");
+                            hexArray.reverse();
+                            numberOfDigits=hexArray.length;
+                            for (var i=0;i<numberOfDigits;i++){
+				                if (hexArray[i]=="a"){
+					                hexArray[i]="10";
+				                }else if(hexArray[i]=="b"){
+					                hexArray[i]="11";
+				                }else if(hexArray[i]=="c"){
+					                hexArray[i]="12";
+			                	}else if(hexArray[i]=="d"){
+					                hexArray[i]="13";
+		                		}else if(hexArray[i]=="e"){
+			                		hexArray[i]="14";
+			                	}else if(hexArray[i]=="f"){
+			                		hexArray[i]="15";
+			            	    }
+                            }
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(hexArray[i]);
+				                decimalH2 += digit*(16**i);
+			                }
+			                second=decimalH2;
+			                result=subtract(first,second);
+                        
                             
                         }else if(numTypeTwo=="Octal"){
-                            
+                            decimalB1=0;
+                            binaryString=first;
+                            binaryArray=binaryString.split("");
+                            binaryArray.reverse();
+                            numberOfDigits=binaryArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(binaryArray[i]);
+				                decimalB1 += digit*(2**i);
+			                }
+			                first=decimalB1;
+			                
+			                decimalO2=0;
+                            octalString=second;
+                            octalArray=octalString.split("");
+                            octalArray.reverse();
+                            numberOfDigits=octalArray.length;
+			                for(var i=0;i<numberOfDigits;i++){
+				                var digit=parseFloat(octalArray[i]);
+				                decimalO2 += digit*(8**i);
+			                }
+			                second=decimalO2;
+			                result=subtract(first,second);
                         }
+                    
+                        
                     }else if(operation=="*"){
+                        
                         if(numTypeTwo=="Decimal"){
+                            
+                        
+                            
+                        
                             
                         }else if(numTypeTwo=="Binary"){
                             
+                        
+                            
                         }else if(numTypeTwo=="Hex"){
+                            
+                        
                             
                         }else if(numTypeTwo=="Octal"){
                             
                         }
+                    
+                        
                     }else if(operation=="/"){
+                        
                         if(numTypeTwo=="Decimal"){
+                            
+                        
                             
                         }else if(numTypeTwo=="Binary"){
                             
+                        
+                            
                         }else if(numTypeTwo=="Hex"){
+                            
+                        
                             
                         }else if(numTypeTwo=="Octal"){
                             
                         }
                     }
+                                                                    //Here is the numTypeOne hex part.
                 }else if(numTypeOne=="Hex"){
                     if(operation=="+"){
                         if(numTypeTwo=="Decimal"){
@@ -140,6 +585,7 @@
                             
                         }
                     }
+                                                                        //And here is the numTypeOne octal part.
                 }else if(numTypeOne=="Octal"){
                     if(operation=="+"){
                         if(numTypeTwo=="Decimal"){
@@ -205,6 +651,11 @@
                 y=parseFloat (y);
                 return x/y;
             }
+            function exponentiate(x,y){
+                x=parseFloat(x);
+                y=parseFloat(y);
+                return x^y;
+            }
             function display(item1,item2,item3,item4){
                 output=item1;
                 output+=item2;
@@ -217,9 +668,14 @@
     </head>
     <body>
         <h1>
-            Testing the text that I've made.
+            Well, type in a number.
         </h1>
-        <br>
+        <h4>
+            You'll only get an answer in decimal, though.
+        </h4>
+        <h6>
+            Deal with it.
+        </h6>
         <br>
         <input type="text" id="firstNumber" placeholder="Number 1">
         <select id="selectBoxOne">
@@ -245,7 +701,6 @@
         </select>
         <br>
         <input type="button" value="Math!" onClick="calculate()">
-        <input type="button" value="Clear" onClick="clear()">
         <br>
         <br>
         <div id="calculation"></div>
