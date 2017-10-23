@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hello Node.js World</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+        <script>
+    	    var url = window.location.href;
+        	var arr = url.split("/");
+        	var result = arr[0] + "//" + arr[2];
+    	    var socket = io.connect(result);
+    	    
+    	    socket.emit("get stocks")
+    	    
+    	    socket.on("recieve stocks", function(data){
+    	        console.log(data);
+    	    })
+        </script>
+    </head>
+    <body>
+        <div> Hello Worlds</div>
+    </body>
+</html>
