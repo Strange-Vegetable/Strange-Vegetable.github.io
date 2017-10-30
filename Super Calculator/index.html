@@ -716,43 +716,64 @@
                 else if (operation == "-") {
                     if (numTypeTwo == "Decimal") {
                         first=hexToDec(first);
+                        result=subtract(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
                         first=hexToDec(first);
+                        second=binToDec(second);
+                        result=subtract(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
                         first=hexToDec(first);
+                        second=hexToDec(second);
+                        result=subtract(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
                         first=hexToDec(first);
+                        second=octToDec(second);
+                        result=subtract(first,second);
                     }
                 }
                 else if (operation == "*") {
                     if (numTypeTwo == "Decimal") {
                         first=hexToDec(first);
+                        result=multiply(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
                         first=hexToDec(first);
+                        second=binToDec(second);
+                        result=multiply(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
                         first=hexToDec(first);
+                        second=hexToDec(second);
+                        result=multiply(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
                         first=hexToDec(first);
+                        second=octToDec(second);
+                        result=multiply(first,second);
                     }
                 }
                 else if (operation == "/") {
                     if (numTypeTwo == "Decimal") {
                         first=hexToDec(first);
+                        result=divide(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
                         first=hexToDec(first);
+                        second=binToDec(second);
+                        result=divide(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
                         first=hexToDec(first);
+                        second=hexToDec(second);
+                        result=divide(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
                         first=hexToDec(first);
+                        second=octToDec(second);
+                        result=divide(first,second);
                     }
                 }
                 //And here is the numTypeOne Octal part.
@@ -760,58 +781,86 @@
             else if (numTypeOne == "Octal") {
                 if (operation == "+") {
                     if (numTypeTwo == "Decimal") {
-                        
+                        first=octToDec(first);
+                        result=add(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
-                        
+                        first=octToDec(first);
+                        second=binToDec(second);
+                        result=add(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
-                        
+                        first=octToDec(first);
+                        second=hexToDec(second);
+                        result=add(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
-                        
+                        first=octToDec(first);
+                        second=octToDec(second);
+                        result=add(first,second);
                     }
                 }
                 else if (operation == "-") {
                     if (numTypeTwo == "Decimal") {
-                        
+                        first=octToDec(first);
+                        result=subtract(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
-                        
+                        first=octToDec(first);
+                        second=binToDec(second);
+                        result=subtract(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
-                        
+                        first=octToDec(first);
+                        second=hexToDec(second);
+                        result=subtract(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
-                        
+                        first=octToDec(first);
+                        second=octToDec(second);
+                        result=subtract(first,second);
                     }
                 }
                 else if (operation == "*") {
                     if (numTypeTwo == "Decimal") {
-                        
+                        first=octToDec(first);
+                        result=multiply(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
-                        
+                        first=octToDec(first);
+                        second=binToDec(second);
+                        result=multiply(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
-                        
+                        first=octToDec(first);
+                        second=hexToDec(second);
+                        result=multiply(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
-                        
+                        first=octToDec(first);
+                        second=octToDec(second);
+                        result=multiply(first,second);
                     }
                 }
                 else if (operation == "/") {
                     if (numTypeTwo == "Decimal") {
-                        
+                        first=octToDec(first);
+                        result=divide(first,second);
                     }
                     else if (numTypeTwo == "Binary") {
-                        
+                        first=octToDec(first);
+                        second=binToDec(second);
+                        result=divide(first,second);
                     }
                     else if (numTypeTwo == "Hex") {
-                        
+                        first=octToDec(first);
+                        second=hexToDec(second);
+                        result=divide(first,second);
                     }
                     else if (numTypeTwo == "Octal") {
-                        
+                        first=octToDec(first);
+                        second=octToDec(second);
+                        result=divide(first,second);
                     }
                 }
             }
