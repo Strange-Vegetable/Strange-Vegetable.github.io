@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+			Bit/Byte Converter
+		</title>
+		<link rel="stylesheet" href="styles.css"/>
+		<script>
+			function divide(x,y){
+				x=parseFloat(x);
+				y=parseFloat(y);
+				return x/y;
+			}
+			function multiply(x,y){
+				x=parseFloat(x);
+				y=parseFloat(y);
+				return x*y;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>
+			Bit & Byte Converter
+		</h1>
+		<br>
+		<input type="text" id="textBox" placeholder="Number">
+		<table width=100%>
+			<tr>
+				<th>
+					Bits
+				</th>
+				<th>
+					Bytes
+				</th>
+			</tr>
+			<tr>
+				<td id="row1cell1">
+					bits
+				</td>
+				<td id="row1cell2">
+					bits
+				</td>
+			</tr>
+			<tr>
+				<td id="row2cell1">
+					kilobits
+				</td>
+				<td id="row2cell2">
+					bytes
+				</td>
+			</tr>
+			<tr>
+				<td id="row3cell1">
+					megabits
+				</td>
+				<td id="row3cell2">
+					kilobytes
+				</td>
+			</tr>
+		</table>
+		<br>
+		<button id="button1" onClick="convert()">
+			Convert
+		</button>
+	</body>
+</html>

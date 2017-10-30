@@ -1,0 +1,21 @@
+body{
+	text-align: center;
+	background-color: rgb(170,170,170);
+}
+table,tr,td,th{
+	text-align: center;
+	border:2px solid black;
+	border-collapse: collapse;
+	background-color: rgb(255,255,255);
+	padding: 2px;
+	font-family: "Comic Sans MS";
+}
+button{
+	border: 2px solid black;
+	background-color: rgb(200,200,200);
+	font-family: "Helvetica", serif;
+}
+input{
+	border: 1px solid black;
+	font-family: "Comic Sans MS";
+}
